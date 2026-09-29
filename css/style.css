@@ -1,0 +1,42 @@
+/* ==========================================================================
+   ESTILOS GLOBAIS E UTILITÁRIOS - EDUCAÇÃO FINANCEIRA NA PRÁTICA
+   ========================================================================== */
+
+/* Animações suaves de transição */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Ocultar scrollbar mantendo funcionalidade de rolagem */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE e Edge */
+    scrollbar-width: none;    /* Firefox */
+}
+
+/* Efeito tátil de clique nos botões (estilo gamificado / Duolingo) */
+.btn-press {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-press:active {
+    transform: translateY(4px);
+    box-shadow: none !important;
+}
