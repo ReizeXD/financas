@@ -1,6 +1,6 @@
 # 📱 Educação Financeira na Prática
 
-Aplicativo gamificado (estilo Duolingo) para aprendizado de finanças pessoais, estruturado de forma modular e limpa.
+Aplicativo gamificado (estilo Duolingo) para aprendizado de finanças pessoais.
 
 ---
 
@@ -9,7 +9,6 @@ Aplicativo gamificado (estilo Duolingo) para aprendizado de finanças pessoais, 
 ```text
 Financas/
 ├── index.html                 # Ponto de entrada padrão da aplicação
-├── educa_o_financeira.html    # Arquivo original atualizado (mantém compatibilidade)
 │
 ├── css/
 │   └── style.css              # Animações, scrollbars e estilos de botões
@@ -26,4 +25,4 @@ Financas/
 
 ## 🚀 Como Executar
 
-Abra o arquivo `index.html` ou `educa_o_financeira.html` no seu navegador favorito!
+Abra o arquivo `index.html` no seu navegador favorito!
