@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Trilha - Educação Financeira</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header-row">
+            <a href="index.html" class="back-btn">&larr;</a>
+            <div class="score-badge" id="score-display">🔥 0</div>
+        </div>
+
+        <main id="app-content" class="main-content no-scrollbar"></main>
+
+        <!-- Menu Modal -->
+        <div id="level-modal" class="modal-overlay fade-in transition-all">
+            <div class="modal-content slide-up">
+                <div class="modal-header">
+                    <h3 id="modal-title" class="title-large">Nível 1</h3>
+                    <button onclick="closeModal()" class="close-btn">&times;</button>
+                </div>
+                <p id="modal-desc" class="text-gray mb-6 font-medium">Fundamentos.</p>
+                <div class="flex flex-col gap-4">
+                    <button id="btn-play" class="btn btn-green btn-press">
+                        🎮 Iniciar Desafio
+                    </button>
+                    <a href="caderno.html" id="btn-study" class="btn btn-blue-light">
+                        📖 Ler Conteúdo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Navegação Inferior -->
+        <nav id="bottom-nav" class="bottom-nav">
+            <a href="trilha.html" class="nav-link active">
+                <span class="nav-icon">🗺️</span>
+                <span>Trilha</span>
+            </a>
+            <a href="caderno.html" class="nav-link">
+                <span class="nav-icon">📖</span>
+                <span>Caderno</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Scripts Modulares -->
+    <script src="js/data.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/ui-trilha.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>

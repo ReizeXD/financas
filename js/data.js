@@ -53,5 +53,56 @@ const levels = [
             { p: "Qual a relação básica entre risco e retorno?", alt: ["Menor risco, maior retorno", "Não há relação", "Maior retorno exige maior risco", "Alto risco sempre dá lucro"], resp: 2, exp: "O mercado exige que você se exponha ao risco para oferecer mais lucros." },
             { p: "Ao comprar uma ação, você está:", alt: ["Emprestando para o governo", "Comprando um pedaço de uma empresa", "Garantindo lucro", "Comprando dólar"], resp: 1, exp: "Você se torna sócio da companhia, participando dos lucros e riscos." }
         ]
+    },
+    {
+        id: 4, 
+        title: "Economia Básica", 
+        emoji: "📈",
+        description: "Selic, IPCA, CDI.",
+        theory: [
+            { t: "Taxa Selic", d: "É a taxa básica de juros da economia. Quando a Selic sobe, os empréstimos ficam mais caros e a inflação tende a cair." },
+            { t: "IPCA", d: "Índice Nacional de Preços ao Consumidor Amplo. É a medida oficial da inflação no Brasil." },
+            { t: "CDI", d: "Certificado de Depósito Interbancário. É uma taxa de juros que os bancos cobram entre si, usada como referência para muitos investimentos." }
+        ],
+        questions: [
+            { p: "O que é a taxa Selic?", alt: ["Taxa básica de juros", "Imposto de Renda", "Custo do dólar", "Lucro da poupança"], resp: 0, exp: "A Selic é a taxa básica de juros, que influencia todas as outras taxas." },
+            { p: "O IPCA mede:", alt: ["A alta do dólar", "A inflação oficial do país", "O lucro das empresas", "O salário mínimo"], resp: 1, exp: "O IPCA é o principal indicador de inflação do Brasil." },
+            { p: "Se a Selic sobe, o que geralmente acontece?", alt: ["Empréstimos ficam mais baratos", "Empréstimos ficam mais caros", "A inflação sobe", "O CDI cai"], resp: 1, exp: "Com a Selic mais alta, o custo do dinheiro aumenta." },
+            { p: "Um investimento rende 100% do CDI. Isso é bom?", alt: ["Sim, rende o dobro", "Sim, acompanha a taxa de mercado", "Não, perde dinheiro", "Não tem relação"], resp: 1, exp: "O CDI é um referencial; 100% do CDI significa render próximo à Selic." }
+        ]
+    },
+    {
+        id: 5, 
+        title: "Mundo dos Investimentos", 
+        emoji: "💼",
+        description: "Tesouro Direto, CDB, FGC.",
+        theory: [
+            { t: "Tesouro Direto", d: "Programa do governo que permite investir em títulos públicos. É como emprestar dinheiro para o governo." },
+            { t: "CDB", d: "Certificado de Depósito Bancário. É um título de renda fixa onde você empresta dinheiro para um banco." },
+            { t: "FGC", d: "Fundo Garantidor de Créditos. Protege investimentos como CDB e Poupança até R$ 250 mil por banco caso a instituição quebre." }
+        ],
+        questions: [
+            { p: "Investir no Tesouro Direto é:", alt: ["Comprar ações", "Emprestar dinheiro para o governo", "Emprestar para o banco", "Comprar dólar"], resp: 1, exp: "Você compra títulos da dívida pública do governo." },
+            { p: "O que é um CDB?", alt: ["Título público", "Empréstimo ao governo", "Título de banco", "Ação de empresa"], resp: 2, exp: "Você empresta dinheiro ao banco, que paga juros." },
+            { p: "O Fundo Garantidor de Créditos (FGC) protege o investidor contra:", alt: ["Queda da bolsa", "Quebra do banco", "Alta da inflação", "Aumento da Selic"], resp: 1, exp: "O FGC garante até 250 mil reais por CPF se o banco falir." },
+            { p: "O Tesouro Selic é ideal para:", alt: ["Reserva de emergência", "Aposentadoria de longo prazo", "Especulação rápida", "Compra de casa"], resp: 0, exp: "Possui liquidez diária e baixo risco, ideal para imprevistos." }
+        ]
+    },
+    {
+        id: 6, 
+        title: "Segurança e Golpes", 
+        emoji: "🛡️",
+        description: "Pirâmides financeiras, Phishing, Agiotas.",
+        theory: [
+            { t: "Pirâmide Financeira", d: "Modelo de negócio insustentável onde o lucro vem da entrada de novos participantes, não da venda de um produto real." },
+            { t: "Phishing", d: "Golpe onde criminosos se passam por empresas reais (por e-mail, SMS ou links) para roubar senhas e dados financeiros." },
+            { t: "Agiotas", d: "Pessoas que emprestam dinheiro fora do sistema financeiro legal, cobrando juros absurdos e usando métodos violentos de cobrança." }
+        ],
+        questions: [
+            { p: "Qual é a principal característica de uma pirâmide financeira?", alt: ["Baixo risco", "Dependência da entrada constante de novas pessoas", "Produto muito bom", "Autorizada pelo governo"], resp: 1, exp: "Se parar de entrar gente, o esquema quebra e os últimos perdem tudo." },
+            { p: "O que é Phishing?", alt: ["Investir em peixes", "Roubo de dados por links falsos", "Criptomoeda", "Título público"], resp: 1, exp: "É uma técnica para 'pescar' informações sensíveis usando mensagens falsas." },
+            { p: "Por que não se deve pegar dinheiro com agiotas?", alt: ["O limite é pequeno", "Cobra juros abusivos e ilegais", "Pede muita papelada", "O dinheiro é falso"], resp: 1, exp: "A prática é crime e as cobranças podem envolver extorsão e violência." },
+            { p: "Alguém oferece retorno garantido de 10% ao mês sem risco. O que é?", alt: ["Excelente negócio", "Tesouro Direto", "Provavelmente um golpe", "Ação da bolsa"], resp: 2, exp: "No mercado real, rentabilidade alta exige alto risco. Retorno alto e garantido é sinal de fraude." }
+        ]
     }
 ];
