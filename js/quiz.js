@@ -134,13 +134,19 @@ function renderQuizResult() {
     const accuracy = Math.round((quizState.correct / total) * 100);
     
     if (typeof AudioSFX !== 'undefined') AudioSFX.playVictory();
-    if (accuracy >= 70 && typeof confetti === 'function') {
-        confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 },
-            zIndex: 9999
-        });
+    if (accuracy >= 70) {
+        if (typeof confetti === 'function') {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                zIndex: 9999
+            });
+        }
+        if (activeLevel && activeLevel.id >= unlockedLevel) {
+            unlockedLevel = activeLevel.id + 1;
+            localStorage.setItem('ef_unlockedLevel', unlockedLevel);
+        }
     }
 
     let html = `

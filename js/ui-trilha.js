@@ -17,6 +17,10 @@ function renderTrilha() {
     
     levels.forEach((lvl, index) => {
         const isLeft = index % 2 === 0;
+        const isLocked = lvl.id > unlockedLevel;
+        const emoji = isLocked ? '🔒' : lvl.emoji;
+        const clickAction = isLocked ? '' : `onclick="openModal(${lvl.id})"`;
+        const style = isLocked ? 'background-color: #f3f4f6; border: 2px solid #d1d5db; box-shadow: 0 5px 0 #d1d5db; cursor: not-allowed; opacity: 0.8;' : '';
         
         html += `
             <div class="level-row ${isLeft ? 'left' : 'right'}">
@@ -27,8 +31,8 @@ function renderTrilha() {
                 ` : ''}
                 
                 <div class="level-btn-wrapper">
-                    <button onclick="openModal(${lvl.id})" class="level-btn">
-                        ${lvl.emoji}
+                    <button ${clickAction} class="level-btn" style="${style}">
+                        ${emoji}
                     </button>
                     <div class="level-tooltip">
                         Nível ${lvl.id}
