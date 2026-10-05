@@ -56,11 +56,13 @@ function checkAnswer(selectedIndex) {
     const isCorrect = selectedIndex === q.resp;
     
     if(isCorrect) {
+        if (typeof AudioSFX !== 'undefined') AudioSFX.playSuccess();
         quizState.correct++;
         quizState.streak++;
         score += 100 + (quizState.streak >= 3 ? 50 : 0);
         localStorage.setItem('ef_score', score);
     } else {
+        if (typeof AudioSFX !== 'undefined') AudioSFX.playError();
         quizState.streak = 0;
         quizState.mistakes.push(q.exp);
     }
@@ -131,6 +133,16 @@ function renderQuizResult() {
     const total = quizState.questions.length;
     const accuracy = Math.round((quizState.correct / total) * 100);
     
+    if (typeof AudioSFX !== 'undefined') AudioSFX.playVictory();
+    if (accuracy >= 70 && typeof confetti === 'function') {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            zIndex: 9999
+        });
+    }
+
     let html = `
         <div class="fade-in text-center flex flex-col justify-center" style="height:100%;">
             <div style="font-size:80px; margin-bottom:16px;">🏆</div>
