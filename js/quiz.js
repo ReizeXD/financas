@@ -65,6 +65,10 @@ function checkAnswer(selectedIndex) {
         if (typeof AudioSFX !== 'undefined') AudioSFX.playError();
         quizState.streak = 0;
         quizState.mistakes.push(q.exp);
+        if (lives > 0) {
+            lives--;
+            localStorage.setItem('ef_lives', lives);
+        }
     }
 
     let html = `
@@ -120,7 +124,29 @@ function checkAnswer(selectedIndex) {
     contentDiv.innerHTML = html;
 }
 
+function renderGameOver() {
+    if (typeof AudioSFX !== 'undefined') AudioSFX.playError();
+    let html = `
+        <div class="fade-in flex flex-col items-center justify-center text-center" style="height:100%;">
+            <div style="font-size:80px; margin-bottom:16px;">💔</div>
+            <h2 class="title-xl mb-4 text-red" style="color: #dc2626;">Vidas Esgotadas!</h2>
+            <p class="text-gray mb-8 font-medium">Você ficou sem vidas. Vá para o Caderno para estudar e recuperá-las!</p>
+            <a href="caderno.html?level=${activeLevel.id}" class="btn btn-blue-light btn-press mb-4 w-full flex justify-center items-center" style="background-color: #bfdbfe; color: #1e3a8a; border-color: #93c5fd; box-shadow: 0 5px 0 #60a5fa; max-width: 300px;">
+                📖 Ler o Caderno
+            </a>
+            <a href="trilha.html" class="btn btn-gray btn-press w-full flex justify-center items-center" style="max-width: 300px;">
+                🏠 Voltar para Trilha
+            </a>
+        </div>
+    `;
+    contentDiv.innerHTML = html;
+}
+
 function nextQuestion() {
+    if (lives <= 0) {
+        renderGameOver();
+        return;
+    }
     quizState.currentIndex++;
     if (quizState.currentIndex < quizState.questions.length) {
         renderQuizQuestion();

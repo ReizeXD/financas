@@ -9,9 +9,12 @@
 <body>
     <div class="app-container">
         <!-- Header -->
-        <div class="header-row">
+        <div class="header-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <a href="index.html" class="back-btn">&larr;</a>
-            <div class="score-badge" id="score-display">🔥 0</div>
+            <div style="display: flex; gap: 8px;">
+                <div class="score-badge" id="lives-display">❤️❤️❤️❤️❤️</div>
+                <div class="score-badge" id="score-display">🔥 0</div>
+            </div>
         </div>
 
         <main id="app-content" class="main-content no-scrollbar"></main>

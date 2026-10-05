@@ -1,9 +1,13 @@
 const contentDiv = document.getElementById('app-content');
 const modal = document.getElementById('level-modal');
 const scoreDisplay = document.getElementById('score-display');
+const livesDisplay = document.getElementById('lives-display');
 
 function updateScore() {
     if (scoreDisplay) scoreDisplay.innerText = `🔥 ${score}`;
+    if (livesDisplay) {
+        livesDisplay.innerText = '❤️'.repeat(lives) + '🤍'.repeat(5 - lives);
+    }
 }
 
 function renderTrilha() {
@@ -48,10 +52,17 @@ function renderTrilha() {
 function openModal(levelId) {
     const lvl = levels.find(l => l.id === levelId);
     document.getElementById('modal-title').innerText = `Nível ${lvl.id}`;
-    document.getElementById('modal-desc').innerText = lvl.title;
     
-    document.getElementById('btn-play').onclick = () => { closeModal(); startQuiz(levelId); };
-    document.getElementById('btn-study').href = `caderno.html?level=${levelId}`;
+    if (lives <= 0) {
+        document.getElementById('modal-desc').innerText = "Você não tem vidas! Leia o Caderno para recuperar.";
+        document.getElementById('btn-play').style.display = 'none';
+        document.getElementById('btn-study').href = `caderno.html`;
+    } else {
+        document.getElementById('modal-desc').innerText = lvl.title;
+        document.getElementById('btn-play').style.display = 'block';
+        document.getElementById('btn-play').onclick = () => { closeModal(); startQuiz(levelId); };
+        document.getElementById('btn-study').href = `caderno.html?level=${levelId}`;
+    }
     
     modal.style.display = 'flex';
 }

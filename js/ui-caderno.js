@@ -57,12 +57,23 @@ function renderTheoryDetail(levelId) {
 
     html += `
             </div>
+            ${lives < 5 ? `
+            <button onclick="recoverLives(${lvl.id})" class="btn btn-blue-light btn-press flex justify-center items-center gap-2 mb-4" style="background-color: #fca5a5; color: #7f1d1d; border-color: #f87171; box-shadow: 0 5px 0 #ef4444;">
+                ❤️ Recuperar Vidas
+            </button>` : ''}
             <a href="trilha.html" class="btn btn-green btn-press flex justify-center items-center gap-2">
                 🎮 Ir para a Trilha
             </a>
         </div>
     `;
     contentDiv.innerHTML = html;
+}
+
+window.recoverLives = function(levelId) {
+    lives = 5;
+    localStorage.setItem('ef_lives', lives);
+    alert('Vidas recuperadas! Agora você pode voltar aos desafios.');
+    renderTheoryDetail(levelId);
 }
 
 // Inicializa
